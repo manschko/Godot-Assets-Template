@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://e1o6sbenh5nc"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_4xowi"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(16.16, 0, 0, 0, -7.06376e-07, 16.16, 0, -16.16, -7.06376e-07, 0, 0, 0)
+mesh = SubResource("QuadMesh_4xowi")
