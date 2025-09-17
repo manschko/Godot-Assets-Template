@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5cuhdl73ggif"]
+
+[ext_resource type="Script" uid="uid://l1t6dqdlvq2h" path="res://addons/ui/Menu/main_menu.gd" id="1_exupg"]
+[ext_resource type="PackedScene" uid="uid://cl0vl037l6o4k" path="res://addons/ui/Menu/settings/settings_menu.tscn" id="2_htn0a"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_exupg")
+settingsScene = ExtResource("2_htn0a")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start_button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 447.0
+offset_top = 75.0
+offset_right = 723.0
+offset_bottom = 194.0
+text = "Start"
+
+[node name="Settings_button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 247.0
+offset_right = 744.0
+offset_bottom = 349.0
+text = "Settings"
+
+[node name="Quit_button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 417.0
+offset_right = 703.0
+offset_bottom = 515.0
+text = "Quit
+"
+
+[connection signal="pressed" from="Control/Start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/Settings_button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Control/Quit_button" to="." method="_on_quit_button_pressed"]

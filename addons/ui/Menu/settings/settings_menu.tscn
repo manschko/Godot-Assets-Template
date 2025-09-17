@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl0vl037l6o4k"]
+
+[ext_resource type="Theme" uid="uid://co3x6b7ogo23m" path="res://addons/ui/Menu/settings/menu.tres" id="1_ijwni"]
+[ext_resource type="Script" uid="uid://dkclaj34e0l6q" path="res://addons/ui/Menu/settings/settings_menu.gd" id="1_nifkk"]
+[ext_resource type="PackedScene" uid="uid://i57rc6qu4fnj" path="res://addons/ui/Menu/settings/Elements/slider.tscn" id="3_qk8g5"]
+
+[node name="SettingsMenu" type="Node2D"]
+script = ExtResource("1_nifkk")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+offset_left = 80.0
+offset_top = 49.0
+offset_right = 1074.0
+offset_bottom = 579.0
+size_flags_vertical = 3
+theme = ExtResource("1_ijwni")
+current_tab = 0
+
+[node name="Sound" type="VBoxContainer" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Sound"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Sound Control"
+
+[node name="Master" parent="TabContainer/Sound" instance=ExtResource("3_qk8g5")]
+layout_mode = 2
+setting_title = "Master"
+
+[node name="Slider" parent="TabContainer/Sound" instance=ExtResource("3_qk8g5")]
+layout_mode = 2
+setting_title = "Music"
+
+[node name="SFX" parent="TabContainer/Sound" instance=ExtResource("3_qk8g5")]
+layout_mode = 2
+setting_title = "SFX"
+
+[node name="Control" type="VBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Button" type="Button" parent="TabContainer/Control"]
+layout_mode = 2
+text = "sfdgfsd"
+
+[node name="Graphics" type="VBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Button" type="Button" parent="TabContainer/Graphics"]
+layout_mode = 2
+text = "ahgah"
