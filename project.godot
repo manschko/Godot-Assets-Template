@@ -15,6 +15,10 @@ run/main_scene="uid://bqb2s3wwfenyc"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SettingsManager="*res://addons/ui/Menu/settings/SettingsManager.gd"
+
 [dotnet]
 
 project/assembly_name="templates"

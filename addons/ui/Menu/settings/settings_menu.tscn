@@ -1,11 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl0vl037l6o4k"]
+[gd_scene load_steps=5 format=3 uid="uid://cl0vl037l6o4k"]
 
 [ext_resource type="Theme" uid="uid://co3x6b7ogo23m" path="res://addons/ui/Menu/settings/menu.tres" id="1_ijwni"]
-[ext_resource type="Script" uid="uid://dkclaj34e0l6q" path="res://addons/ui/Menu/settings/settings_menu.gd" id="1_nifkk"]
-[ext_resource type="PackedScene" uid="uid://i57rc6qu4fnj" path="res://addons/ui/Menu/settings/Elements/slider.tscn" id="3_qk8g5"]
+[ext_resource type="Script" uid="uid://b4emo0k30aebo" path="res://addons/ui/Menu/settings/SettingsHandlers.gd" id="1_v136q"]
+[ext_resource type="PackedScene" uid="uid://i57rc6qu4fnj" path="res://addons/ui/Menu/settings/Elements/Slider/slider.tscn" id="3_qk8g5"]
+[ext_resource type="PackedScene" uid="uid://ylqfpxncgodc" path="res://addons/ui/Menu/settings/Elements/Select/select.tscn" id="4_v136q"]
 
 [node name="SettingsMenu" type="Node2D"]
-script = ExtResource("1_nifkk")
+script = ExtResource("1_v136q")
 
 [node name="TabContainer" type="TabContainer" parent="."]
 offset_left = 80.0
@@ -14,9 +15,10 @@ offset_right = 1074.0
 offset_bottom = 579.0
 size_flags_vertical = 3
 theme = ExtResource("1_ijwni")
-current_tab = 0
+current_tab = 2
 
 [node name="Sound" type="VBoxContainer" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -48,10 +50,15 @@ layout_mode = 2
 text = "sfdgfsd"
 
 [node name="Graphics" type="VBoxContainer" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
 [node name="Button" type="Button" parent="TabContainer/Graphics"]
 layout_mode = 2
 text = "ahgah"
+
+[node name="Select" parent="TabContainer/Graphics" instance=ExtResource("4_v136q")]
+layout_mode = 2
+values = Array[String](["1280x720", "1366x768", "1600x900", "1920x1080", "2560x1440", "3840x2160"])
+start_val = "1920x1080"
+setting_title = "Resolution"
